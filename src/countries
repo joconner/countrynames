@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+/**
+ * Created by joconner on 6/29/16.
+ */
+
+supportedLangs = Locale.getISOLanguages();
+
+if (!(this.args.length > 0 && supportedLangs.contains(this.args[0].toLowerCase()))) {
+    printf("Usage: countries <lang_code>\n")
+    printf("\t<lang_code> must be an ISO lang code. Examples: en, pt, fr, es, ja.\n")
+    System.exit(0)
+}
+currentLocale = new Locale.Builder().setLanguageTag(this.args[0].toLowerCase()).build()
+locales = Locale.getISOCountries()
+for(c in locales) {
+    targetLocale = new Locale.Builder().setRegion(c).build()
+    printf("%s, %s\n", targetLocale.getCountry(), targetLocale.getDisplayCountry(currentLocale))
+}
+
