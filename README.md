@@ -52,4 +52,4 @@ I suspect you'll find other and perhaps more significant differences for other l
 
 ## Downloading Code
 
-You can git the code for this article from my [github account](https://github.com/joconner). Enjoy!
+You can git the code for this article from my [github account](https://github.com/joconner/countrynames). Enjoy!
